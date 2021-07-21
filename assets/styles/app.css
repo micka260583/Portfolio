@@ -1,3 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
 body {
-    background-color: lightgray;
+    background-color: rgb(255, 253, 253);
+    font-family: cursive;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ----------navbar---------- */
+
+.nav {
+    background-color: rgb(194, 190, 190);
+}
+
+.nav-link {
+    color: blueviolet;
+}
+
+.nav-link:hover {
+    color: rgb(250, 104, 85);
+    text-decoration: underline;
+}
+/* -------footer-------- */
+
+.footer {
+    background-color: rgb(194, 190, 190);
+    height: 40px;
+}
+
+.pfooter {
+    color: blueviolet;
+    padding-top: 1%;
+}
+
+.content {
+    flex-grow: 1;
 }

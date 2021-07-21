@@ -21,6 +21,7 @@ class AdminController extends AbstractDashboardController
      */
     public function index(): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $routeBuilder = $this->get(CrudUrlGenerator::class)->build();
 
         return $this->redirect($routeBuilder->setController(ProjectCrudController::class)->generateUrl());
