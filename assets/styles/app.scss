@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+body {
+    background-color: rgb(255, 253, 253);
+    font-family: cursive;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ----------navbar---------- */
+
+.nav {
+    background-color: rgb(194, 190, 190);
+}
+
+.nav-link {
+    color: blueviolet;
+}
+
+.nav-link:hover {
+    color: rgb(250, 104, 85);
+    text-decoration: underline;
+}
+/* -------footer-------- */
+
+.footer {
+    background-color: rgb(194, 190, 190);
+    height: 40px;
+}
+
+.pfooter {
+    color: blueviolet;
+    padding-top: 1%;
+}
+
+.content {
+    flex-grow: 1;
+}
+
+/* -------------Accueil----------------- */
+
+#contact-btn {
+    background-color: rgb(194, 190, 190);
+    color: blueviolet;
+    border: 2px solid blueviolet;
+    text-decoration: none;
+}
+
+#contact-btn:hover {
+    color: rgb(250, 104, 85);
+    text-decoration: underline;
+}
+
+.avatar {
+    max-height: 60%;
+    max-width: 60%;
+    margin-top: 20%;
+    margin-left: 20%;
+}
+
+/* -----------À propos-------------- */
+
+h1 {
+  font-size: 150%;
+  margin-top: 1%;
+}
+
+.nomapropos{
+  font-size: 150%;
+  margin-left: 15%;
+}
+
+.slogan {
+  font-family: 'Pacifico', cursive;
+  font-size: 150%;
+  margin-left: 20%;
+}
+
+.main-timeline {
+  font-family: cursive;
+
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  .timeline {
+    width: calc(50% + 58px);
+    border-top: 2px solid #404247;
+    float: left;
+    position: relative;
+    z-index: 1;
+
+    a {
+      text-decoration: none;
+    }
+
+    &:before {
+      content: "";
+      background: #404247;
+      width: 10px;
+      height: 10px;
+      border-radius: 50px;
+      position: absolute;
+      top: -5px;
+      right: 0;
+    }
+  }
+
+  .timeline-content {
+    color: #404247;
+    text-align: center;
+    padding: 15px 80px 15px 10px;
+    display: block;
+    position: relative;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:before {
+      content: "";
+      background: #00a6f9;
+      width: 15px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 50px;
+    }
+  }
+
+  .timeline-year {
+    font-size: 35px;
+    line-height: 35px;
+    font-weight: 700;
+    transform: translateY(-50%) rotate(90deg);
+    position: absolute;
+    top: 50%;
+    right: -15px;
+  }
+
+  .title {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin: 0 0 8px;
+  }
+
+  .description {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .timeline {
+    &:nth-child(even) {
+      float: right;
+
+      &:before {
+        right: auto;
+        left: 0;
+      }
+
+      .timeline-content {
+        padding: 15px 10px 15px 80px;
+
+        &:before {
+          right: auto;
+          left: 51px;
+        }
+      }
+
+      .timeline-year {
+        right: auto;
+        left: -15px;
+      }
+    }
+
+    &:nth-child(4n+2) .timeline-content:before {
+      background: #ff3e7c;
+    }
+
+    &:nth-child(4n+3) .timeline-content:before {
+      background: #2dd544;
+    }
+
+    &:nth-child(4n+4) .timeline-content:before {
+      background: #ffb500;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .main-timeline .timeline {
+    width: 100%;
+  }
+}
+
+/* -----------projet------------- */
+

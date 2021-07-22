@@ -64,7 +64,8 @@ class FrontController extends AbstractController
     public function AboutMe(): Response
     {
         return $this->render('front/about_me.html.twig', [
-            'timeline' => $this->timelineRepository->findAll(),
+            'timelines' => $this->timelineRepository->findAll(),
+            'aboutMe' => $this->aboutMeRepository->findAll()[0],
         ]);
     }
 

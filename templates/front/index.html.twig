@@ -5,8 +5,21 @@
 {% block body %}
 
 <div class="container">
-    <h1>Accueil</h1>
-
+        <div class="card mb-3 mt-3" style="max-width: 100%; border: none;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img class="avatar" src="{{ asset('build/photoprofil.jpg') }}" class="img-fluid rounded-start" alt="photo de profil">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body ms-5">
+                  <h5 class="card-title my-4">{{ aboutMe.title }}</h5>
+                  <p class="card-text my-4">{{ aboutMe.functions }}</p>
+                  <p class="card-text my-4">{{ aboutMe.description }}</p>
+                  <a class="btn btn-outline contact-btn my-4" id="contact-btn" style="border-radius: 0; border-color: blueviolet;" href="{{ path('about_me') }}" role="button">En savoir plus</a>
+                </div>
+              </div>
+            </div>
+          </div>
    {{dump(aboutMe)}}
 </div>
 {% endblock %}

@@ -5,8 +5,32 @@
 {% block body %}
 
 <div class="container">
-    <h1>A Propos</h1>
+   <h1 class="d-flex justify-content-center">À Propos</h1>
+   <div class="row g-0">
+      <div class="col-md-8">
+        <h2 class="nomapropos my-3">Mickaël Garatens</h2>
+        <h2 class="slogan my-4" ><i>" N'imitez pas, innovez ou copier/coller"</i></h2>
+      </div>
+      <div class="col-md-2 d-flex flex-column">
+        <a class="btn-outline contact-btn my-2 text-center" id="contact-btn" style="border-radius: 0;" href="{{ aboutMe.githubLink }}" role="button">Lien Github</a>
+        <a class="btn-outline contact-btn my-2 text-center" id="contact-btn" style="border-radius: 0;" href="{{ asset('build/GARATENS_Mickael_DEV_PHP.pdf') }}" role="button">Télécharger le CV</a>
+      </div>
+   </div>
 
-   {{dump(timeline)}}
+   <div class="row">
+      <div class="main-timeline">
+         {% for timeline in timelines %}
+        <div class="timeline">
+          <a href="#" class="timeline-content">
+            <div class="timeline-year">{{ timeline.year }}</div>
+            <h3 class="title">{{ timeline.title }}</h3>
+            <p class="description">{{ timeline.description }}</p>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+   </div>
+   
+
 </div>
 {% endblock %}

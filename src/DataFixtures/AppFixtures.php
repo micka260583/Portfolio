@@ -37,7 +37,8 @@ class AppFixtures extends Fixture
         for ($i = 0; $i < 5; $i++) {
             $timeline = new Timeline();
             $timeline->setYear($year + $i)
-                ->setDescription($faker->paragraph(5));
+                ->setDescription($faker->paragraph(5))
+                ->setTitle($faker->word());
 
             $manager->persist($timeline);
         }
