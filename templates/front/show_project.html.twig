@@ -5,8 +5,33 @@
 {% block body %}
 
 <div class="container">
-    <h1>Projet</h1>
+    <h1 class="d-flex justify-content-center">Projet</h1>
 
-   {{dump(project)}}
-</div>
+    <div class="card mb-3" style="max-width: 100%;">
+        <div class="row g-0">
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="titreprojet card-title"><span style=background-color:rgb(194,190,190);>{{ project.title }} {{ project.createdAt|date('Y') }}</span></h5>
+                    <h5 class="technos">Technos :</h5>
+                    <p>
+                        {% for techno in project.technos %}
+                        {{ techno.name }}
+                        {% endfor %}
+                    </p>
+                    <h5 class="technos">Description :</h5>
+                    <p class="card-text">{{ project.description }}</p>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-items-center">
+              <img src="{{ project.illustration }}" class="img-fluid rounded-start" alt="...">
+            </div>
+        </div>
+    </div>
+        <div class="projectcard d-flex flex-wrap">
+            {% for gallery in project.gallery %}
+                <img class="galleryimage p-3" src="{{ gallery.image }}" alt="">
+            {% endfor %}
+        </div>
+    </div>
+    {# {{dump(project)}} #}
 {% endblock %}

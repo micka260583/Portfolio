@@ -5,8 +5,30 @@
 {% block body %}
 
 <div class="container">
-    <h1>Projets</h1>
-
-   {{dump(projects)}}
+    <h1 class="d-flex justify-content-center">Projets</h1>
+    {% for project in projects %}
+    <div class="card mb-3" style="max-width: 100%;">
+        <div class="row g-0">
+          <div class="col-md-4 d-flex align-items-center">
+            <img src="{{ project.illustration }}" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+                <a class="lienshowone" href="{{ path("show_project", { slug: project.slug }) }}">
+                    <h5 class="card-title"><span style=background-color:rgb(194,190,190);>{{ project.title }} {{ project.createdAt|date('Y') }}</span></h5>
+                </a>
+              <p class="card-text">{{ project.pitch }}</p>
+              <p class="card-text">{{ project.description }}</p>
+              <p>
+                  {% for techno in project.technos %}
+                  {{ techno.name }}
+                  {% endfor %}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+   {# {{dump(projects)}} #}
 </div>
 {% endblock %}

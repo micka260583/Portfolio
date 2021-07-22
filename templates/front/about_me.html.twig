@@ -4,7 +4,7 @@
 
 {% block body %}
 
-<div class="container">
+<div class="container mb-2" style="background-color:white;">
    <h1 class="d-flex justify-content-center">À Propos</h1>
    <div class="row g-0">
       <div class="col-md-8">
@@ -16,7 +16,6 @@
         <a class="btn-outline contact-btn my-2 text-center" id="contact-btn" style="border-radius: 0;" href="{{ asset('build/GARATENS_Mickael_DEV_PHP.pdf') }}" role="button">Télécharger le CV</a>
       </div>
    </div>
-
    <div class="row">
       <div class="main-timeline">
          {% for timeline in timelines %}
@@ -30,7 +29,5 @@
         {% endfor %}
       </div>
    </div>
-   
-
 </div>
 {% endblock %}
